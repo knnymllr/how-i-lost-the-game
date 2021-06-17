@@ -1,10 +1,67 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <main>
+      <label for="">What is your name?
+        <input 
+          type="text" 
+          v-model="newName" 
+          placeholder="" 
+        />
+      </label>
+      <label for="">How did you lose the game?
+        <textarea 
+          name="description" 
+          id="description" 
+          v-model="newDescription" 
+          cols="30" 
+          rows="10"
+        ></textarea>
+    </label>   
+    <button @click="pushLoss">
+      Share
+    </button>  
+    <div v-for="loss in losses" :key="loss.id">
+      <h2>{{ loss.name }}</h2>
+      <strong><p>{{ loss.description }}</p></strong>
+    </div>
+  </main>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+
+export default {
+  name: 'App',
+
+  data() {
+    return {
+
+      newName: "",
+      newDescription: "",
+
+      losses: [
+      { id: 1, name: "Kenny", description: "I lost the game, bigtime." },
+      { id: 2, name: "Eryn", description: "I lost the game, bigtime."  },
+      { id: 3, name: "Jake", description: "I lost the game, bigtime."  },
+      ],
+
+    }
+  },
+
+  methods: {
+    pushLoss() {
+      this.losses.push({id: this.losses.length + 1, name: this.newName, description: this.newDescription })
+      this.newItem = "";
+      this.newDescription = "";
+    },
+  }
+}
+
+
+
+// let newName = "";
+// let newDescription = "";
+// const posts = [
+//   { id: 1, name: "Kenny", description: "I lost the game on the train." },
+// ];
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
@@ -15,8 +72,35 @@ import HelloWorld from './components/HelloWorld.vue'
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+button {
+  width: 80px;
+  height: 35px;
+}
+
+input,
+textarea {
+  max-width: 600px;
+  padding:.5rem;
+}
+
+
+label {
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  margin-bottom:2rem;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  padding:2rem;
+}
+
+
 </style>
