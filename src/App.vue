@@ -38,9 +38,7 @@ export default {
       newDescription: "",
 
       losses: [
-      { id: 1, name: "Kenny", description: "I lost the game, bigtime." },
-      { id: 2, name: "Eryn", description: "I lost the game, bigtime."  },
-      { id: 3, name: "Jake", description: "I lost the game, bigtime."  },
+      { id: 1, name: "", description: "" },
       ],
 
     }
@@ -49,7 +47,7 @@ export default {
   methods: {
     pushLoss() {
       this.losses.push({id: this.losses.length + 1, name: this.newName, description: this.newDescription })
-      this.newItem = "";
+      this.newName = "";
       this.newDescription = "";
     },
   }
