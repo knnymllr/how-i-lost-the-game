@@ -27,7 +27,7 @@
     </div>
   </main>
   <footer>
-    <p>Made with <a href="https://vitejs.dev">Vite</a> + <a href="https://v3.vuejs.org">Vue</a>. Hosted by <a href="https://netlify.com">Netlify</a>. <a href="https://github.com/knnymllr/how-i-lost-the-game">View on GitHub</a>
+    <p>Made with <a href="https://vitejs.dev">Vite</a> + <a href="https://v3.vuejs.org">Vue</a>. Hosted by <a href="https://netlify.com">Netlify</a>. <a href="https://github.com/knnymllr/how-i-lost-the-game">View on GitHub</a>.
     </p>
   </footer>
 </template>
