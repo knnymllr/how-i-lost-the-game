@@ -1,4 +1,6 @@
 <template>
+  <router-view />
+
   <main>
     <h1>You Lost The Game</h1>
       <strong><p>This is a space for losers of The Game to humbly convene and share their story.</p></strong>
